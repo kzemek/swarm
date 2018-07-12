@@ -182,7 +182,7 @@ defmodule Swarm.Tracker do
     # Connect to a random node and sync registries,
     # start anti-entropy, and start loop with forked clock of
     # remote node
-    sync_node = Enum.random(nodes)
+    sync_node = Enum.min(nodes)
     info "selected sync node: #{sync_node}"
     # Send sync request
     clock = Clock.seed()
